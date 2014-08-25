@@ -18,9 +18,12 @@ def compute_gcd(int_a, int_b) :
 # The algorithm is based on Euclid's Algorithm described in Knuth's 
 # Art Art of Computer Programming Vol 2 (pages 316 Section 4.5.2)
 # This is algorithm B.
-# (Note: this implementation uses modulo arithmetica and division, which was
-# not used in Knuth's explanation. Addition and shift is all that is need to 
-# compute the gcd. Leaving that up to the compiler to get right.)
+# (Note: this implementation uses bit-wise evaluation of the even/oddness
+# and then uses division. No appreciable improvement was found when division 
+# and multiplication by two was substituded with bit-wise shift operations.
+# Knuth's algorithm leveraged shift since it was computationally more efficient
+# in some computer architectures. The algorithm only requiredaAddition and shift
+# was required to compute the gcd.)
 #
 # Returns:
 #       gcd if int_a and int_b are positive integer
@@ -71,7 +74,7 @@ def compute_gcd(int_a, int_b) :
         # Recursively call with inb_b factored by 2
         # At this point int_a will never have another factor of 2 and we eliminate
         # factors of two from future gcd computations 
-        return compute_gcd(int_a, int_b /2)
+        return compute_gcd(int_a, int_b / 2)
         
     # Neither of the integers have factors of two, both are odd.
     # (NOTE: both are odd so their difference is even and can be evenly 
