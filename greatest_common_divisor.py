@@ -13,7 +13,7 @@
 
 def compute_gcd(int_a, int_b) :
 #
-# Returns the greatest common devisor (gcd) of two integers int_a and int_b
+# Returns the greatest common divisor (gcd) of two integers int_a and int_b
 #
 # The algorithm is based on Euclid's Algorithm described in Knuth's 
 # Art Art of Computer Programming Vol 2 (pages 316 Section 4.5.2)
@@ -22,8 +22,8 @@ def compute_gcd(int_a, int_b) :
 # and then uses division. No appreciable improvement was found when division 
 # and multiplication by two was substituded with bit-wise shift operations.
 # Knuth's algorithm leveraged shift since it was computationally more efficient
-# in some computer architectures. The algorithm only requiredaAddition and shift
-# was required to compute the gcd.)
+# in some computer architectures. The original algorithm only required: Addition and shift
+# to compute the gcd. I used multiplication and division for clarity.)
 #
 # Returns:
 #       gcd if int_a and int_b are positive integer
